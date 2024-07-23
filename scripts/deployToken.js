@@ -3,8 +3,6 @@ const hre = require("hardhat");
 
 async function main() {
 
-    const [signers] = await hre.ethers.getSigners();
-
     const contract = await hre.ethers.deployContract("TestToken");
 
     await contract.waitForDeployment();
