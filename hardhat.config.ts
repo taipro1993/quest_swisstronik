@@ -1,16 +1,13 @@
-import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-import "@nomicfoundation/hardhat-verify";
-import { network } from "hardhat";
 require('dotenv').config();
 
-const config: HardhatUserConfig = {
-  solidity: "0.8.19",
+module.exports = {
+  solidity: "0.8.20",
 
   networks: {
     swisstronik: {
       url: "https://json-rpc.testnet.swisstronik.com/",
-      accounts: ["0x" + process.env.PRIVATE_KEY_88888 || ""]
+      accounts: [process.env.PRIVATE_KEY_88888 || ""]
     },
   },
 
@@ -19,6 +16,4 @@ const config: HardhatUserConfig = {
   }
 
 };
-
-export default config;
 
