@@ -3,7 +3,7 @@ const hre = require("hardhat");
 
 async function main() {
 
-    const contract = await hre.ethers.deployContract("MyToken721");
+    const contract = await hre.ethers.deployContract("Token721private");
 
     await contract.waitForDeployment();
 
