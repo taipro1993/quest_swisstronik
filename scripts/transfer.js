@@ -21,11 +21,11 @@ const sendShieldedTransaction = async (signer, destination, data, value) => {
 
 async function main() {
   // Address of the deployed contract
-  const replace_contractAddress = "0xc0A6f255B3493e0740f1E71e397654a1F75beAC0";
+  const replace_contractAddress = "0xb9DE7F0520D0210ba2297a3E536cbD62acaA7F21";
 
   // Get the signer (your account)
   const [signer] = await hre.ethers.getSigners();
-
+  console.log("Sending a shielded transaction to transfer 1 token in the contract...");
   // Create a contract instance
   const replace_contractFactory = await hre.ethers.getContractFactory("TestToken");
   const contract = replace_contractFactory.attach(replace_contractAddress);

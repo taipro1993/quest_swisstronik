@@ -4,17 +4,28 @@ import "@nomicfoundation/hardhat-verify";
 require('dotenv').config();
 
 module.exports = {
-  solidity: "0.8.20",
-
+  
+  solidity: {
+    version: "0.8.20", 
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+    },
+  },
   networks: {
     swisstronik: {
       url: "https://json-rpc.testnet.swisstronik.com/",
-      accounts: [process.env.PRIVATE_KEY_88888 || ""]
-    },
+      accounts: [process.env.PRIVATE_KEY_8888 || ""]
+    }, 
   },
 
   etherscan: {
-    apiKey: `ANY_STRING_WILL_DO`,
+    // apiKey: `ANY_STRING_WILL_DO`,
+    apiKey:{
+      swisstronik:"any_string_will_do"
+    },
     customChains: [
       {
         network: "swisstronik",
